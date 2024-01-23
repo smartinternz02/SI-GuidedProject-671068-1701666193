@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panic Disorder Prediction</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        form {
+            text-align: left;
+            max-width: 300px; /* Adjust the maximum width of the form */
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Panic Disorder Prediction</h1>
+    
+    <form action="/predict" method="post">
+        <label for="Coping_Mechanisms">Coping Mechanisms:</label>
+        <input type="text" name="Coping_Mechanisms" required>
+
+        <label for="stresss">Current Stressors:</label>
+        <input type="text" name="stresss" required>
+
+        <label for="Demographics">Demographics:</label>
+        <input type="text" name="Demographics" required>
+
+        <label for="Family_History">Family History:</label>
+        <input type="text" name="Family_History" required>
+
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender" required>
+
+        <label for="Impact_on_Life">Impact on Life:</label>
+        <input type="text" name="Impact_on_Life" required>
+
+        <label for="Symptoms">Symptoms:</label>
+        <input type="text" name="Symptoms" required>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if p %}
+        <p>{{ p }}</p>
+    {% endif %}
+</body>
+</html>
